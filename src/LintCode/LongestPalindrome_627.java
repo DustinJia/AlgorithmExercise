@@ -46,4 +46,5 @@ public class LongestPalindrome_627 {
 
         return even + odd + (hasOdd ? 1 : 0);
     }
+
 }
