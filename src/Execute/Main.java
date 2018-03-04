@@ -1,10 +1,12 @@
 package Execute;
 
-import LintCode.LongestPalindrome_627;
+import LintCode.ValidPalindrome_415;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.printf(String.valueOf(LongestPalindrome_627.longestPalindrome("abccccdd")));
+        boolean result = ValidPalindrome_415.isPalindrome("abc11211cba");
+
+        System.out.printf(String.valueOf(result));
     }
 }
