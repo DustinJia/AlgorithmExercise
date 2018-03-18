@@ -1,6 +1,6 @@
 package LintCode;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 // http://www.lintcode.com/en/problem/longest-palindrome/#
 
@@ -22,29 +22,22 @@ import java.util.HashMap;
 public class LongestPalindrome_627 {
 
     public static int longestPalindrome(String s) {
-        HashMap<Character, Integer> hashMap = new HashMap<>();
-        int even = 0, odd = 0;
-        boolean hasOdd = false;
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
 
-        for (int i = 0; i < s.length(); i++) {
-            Character character = s.charAt(i);
-            if (hashMap.get(character) == null) {
-                hashMap.put(character, 1);
+        HashSet<Character> characters = new HashSet<>();
+        for (Character character : s.toCharArray()) {
+            if (characters.contains(character)) {
+                characters.remove(character);
             } else {
-                hashMap.put(character, hashMap.get(character) + 1);
+                characters.add(character);
             }
         }
 
-        for (Integer value : hashMap.values()) {
-            if (value % 2 == 0) {  // Even
-                even += value;
-            } else {  // Odd
-                odd += value - 1;
-                hasOdd = true;
-            }
-        }
+        int removable = characters.size();
 
-        return even + odd + (hasOdd ? 1 : 0);
+        return s.length() - removable + (removable > 0 ? 1 : 0);
     }
 
 }
