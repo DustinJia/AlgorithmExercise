@@ -19,10 +19,11 @@ public class strStrⅡ_594 {
 
     // Rabin Karp: http://www.jiuzhang.com/video/rabin-karp
 
-    static final int kSystemBase = 31;
-    static final int kModelBase = (int) 1e6;
+    static final int SYSTEM_BASE = 31;
+    static final int MODULE_BASE = (int) 1e6;
 
     public static int strStr2(String source, String target) {
+
         if (source == null || target == null) {
             return -1;
         }
@@ -30,39 +31,36 @@ public class strStrⅡ_594 {
             return 0;
         }
 
-        int m = target.length();
+        int targetLength = target.length();
 
-        // Power of M
-        int powerM = 1;
-        for (int i = 0; i < m; i++) {
-            powerM = (powerM * kSystemBase) % kModelBase;
+        int powerTarget = 1;
+        for (int i = 0; i < target.length(); i++) {
+            powerTarget = (powerTarget * SYSTEM_BASE) % MODULE_BASE;
         }
 
-        // Target code
-        int targetCode = 0;
-        for (int i = 0; i < m; i++) {
-            targetCode = (targetCode * kSystemBase + target.charAt(i)) % kModelBase;
+        int targetHashCode = 0;
+        for (int i = 0; i < target.length(); i++) {
+            targetHashCode = (targetHashCode * SYSTEM_BASE + target.charAt(i)) % MODULE_BASE;
         }
 
-        // Source code
-        int sourceCode = 0;
+        int sourceHashCode = 0;
         for (int i = 0; i < source.length(); i++) {
-            sourceCode = (sourceCode * kSystemBase + source.charAt(i)) % kModelBase;
+            sourceHashCode = (sourceHashCode * SYSTEM_BASE + source.charAt(i)) % MODULE_BASE;
 
-            if (i < m - 1) {
+            if (i < targetLength - 1) {
                 continue;
             }
 
-            if (i >= m) {
-                sourceCode = sourceCode - (source.charAt(i - m) * powerM) % kModelBase;
-                if (sourceCode < 0) {
-                    sourceCode += kModelBase;
+            if (i >= targetLength) {
+                sourceHashCode = sourceHashCode - (source.charAt(i - targetLength) * powerTarget) % MODULE_BASE;
+                if (sourceHashCode < 0) {
+                    sourceHashCode += MODULE_BASE;
                 }
             }
 
-            if (sourceCode == targetCode) {
-                if (source.substring(i - m + 1, i + 1).equals(target)) {
-                    return i - m + 1;
+            if (sourceHashCode == targetHashCode) {
+                if (source.substring(i - targetLength + 1, i + 1).equals(target)) {
+                    return i - targetLength + 1;
                 }
             }
         }
