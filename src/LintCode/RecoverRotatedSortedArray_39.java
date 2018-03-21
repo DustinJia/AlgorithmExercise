@@ -15,7 +15,6 @@ package LintCode;
  * [4, 5, 1, 2, 3] -> [1, 2, 3, 4, 5]
  */
 
-import java.util.Arrays;
 import java.util.List;
 
 public class RecoverRotatedSortedArray_39 {
