@@ -8,15 +8,13 @@ package LintCode;
  * Otherwise, sorted in ascending order by number if the difference is same.
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Example
  * Given A = [1, 2, 3], target = 2 and k = 3, return [2, 1, 3].
  * Given A = [1, 4, 6, 8], target = 3 and k = 3, return [4, 1, 6].
  */
 
+import java.util.ArrayList;
 
 public class FindKClosestElements_460 {
 
