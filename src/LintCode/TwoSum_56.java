@@ -13,17 +13,13 @@ package LintCode;
  * You may assume that each input would have exactly one solution.
  */
 
-import com.sun.tools.javac.util.ArrayUtils;
-
-import java.util.Arrays;
-import java.util.HashSet;
-
 /**
  * Example
  * numbers=[2, 7, 11, 15], target=9
  * return [0, 1]
  */
 
+import java.util.Arrays;
 
 public class TwoSum_56 {
 
