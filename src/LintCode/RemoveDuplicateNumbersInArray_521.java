@@ -21,7 +21,7 @@ package LintCode;
  * Actually we don't care about what you place in ?, we only care about the part which has no duplicate integers.
  */
 
-import java.util.HashSet;
+import java.util.Arrays;
 
 public class RemoveDuplicateNumbersInArray_521 {
 
@@ -30,16 +30,13 @@ public class RemoveDuplicateNumbersInArray_521 {
             return 0;
         }
 
+        Arrays.sort(nums);
+
         int slow = 0, fast = 0;
-
-        HashSet<Integer> hashSet = new HashSet<>();
-        hashSet.add(nums[slow]);
-
         while (fast < nums.length) {
-            if (!hashSet.contains(nums[fast])) {
+            if (nums[fast] != nums[slow]) {
                 ++slow;
                 nums[slow] = nums[fast];
-                hashSet.add(nums[slow]);
             }
 
             ++fast;
