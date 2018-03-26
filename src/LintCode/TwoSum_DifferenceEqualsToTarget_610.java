@@ -11,14 +11,13 @@ package LintCode;
  * It's guaranteed there is only one available solution
  */
 
-import java.util.Arrays;
-
 /**
  * Example
  * Given nums = [2, 7, 15, 24], target = 5
  * return [1, 2] (7 - 2 = 5)
  */
 
+import java.util.Arrays;
 
 public class TwoSum_DifferenceEqualsToTarget_610 {
 
@@ -37,10 +36,10 @@ public class TwoSum_DifferenceEqualsToTarget_610 {
         int absTarget = Math.abs(target);
 
         for (int i = 0; i < nums.length - 1; i++) {
-            while (j < nums.length && (Math.abs(pairs[j].value - pairs[i].value) < absTarget || i == j)) {
+            while (j < nums.length && pairs[j].value - pairs[i].value < absTarget || i == j) {
                 ++j;
             }
-            if (Math.abs(pairs[j].value - pairs[i].value) == absTarget) {
+            if (pairs[j].value - pairs[i].value == absTarget) {
                 int minIndex = Math.min(pairs[i].index, pairs[j].index);
                 int maxIndex = Math.max(pairs[i].index, pairs[j].index);
                 return new int[]{minIndex + 1, maxIndex + 1};
