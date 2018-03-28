@@ -16,12 +16,10 @@ package LintCode;
  * find(7) // return false
  */
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TwoSum_DataStructureDesign_607 {
 
-    private ArrayList<Integer> list = new ArrayList<>();
     private HashMap<Integer, Integer> hashMap = new HashMap();
 
     public void add(int number) {
@@ -31,7 +29,6 @@ public class TwoSum_DataStructureDesign_607 {
             hashMap.put(number, 1);
         } else {
             hashMap.put(number, frequency + 1);
-            list.add(number);
         }
     }
 
