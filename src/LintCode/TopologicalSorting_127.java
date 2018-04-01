@@ -44,7 +44,11 @@ public class TopologicalSorting_127 {
             }
         }
 
-        return result;
+        if (queue.size() == result.size()) {
+            return result;
+        }
+
+        return null;
     }
 
     class DirectedGraphNode {
