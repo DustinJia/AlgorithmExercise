@@ -8,8 +8,6 @@ package LintCode;
  * in which the depth of the two subtrees of every node never differ by more than 1.
  */
 
-import com.sun.tools.corba.se.idl.constExpr.Not;
-
 /**
  * Example
  * Given binary tree A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
