@@ -36,6 +36,7 @@ public class ValidateBinarySearchTree_95 {
         }
     }
 
+    //region Inorder Traversal
     private TreeNode lastNode;
     private boolean isValid;
 
@@ -61,6 +62,7 @@ public class ValidateBinarySearchTree_95 {
 
         inorderTraverse(root.right);
     }
+    //endregion
 
     //region Divide & Conquer
     class ResultType {
