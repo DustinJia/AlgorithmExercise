@@ -45,7 +45,7 @@ public class BFS {
         set.add(start);
 
         while (!queue.isEmpty()) {
-            int size = queue.size();  // Getting the queue size before the loop is necessary
+            int size = queue.size();  // Getting the queue size before looping
             for (int i = 0; i < size; i++) {
                 GraphNode head = queue.poll();
                 for (GraphNode neighbor : head.neighbors) {
@@ -88,7 +88,7 @@ public class BFS {
 
         while (!startQueue.isEmpty() || !endQueue.isEmpty()) {
             int startSize = startQueue.size();
-            int endSize = startQueue.size();
+            int endSize = endQueue.size();
 
             step++;
             for (int i = 0; i < startSize; i++) {
