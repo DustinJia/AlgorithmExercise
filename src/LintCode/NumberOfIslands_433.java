@@ -9,9 +9,6 @@ package LintCode;
  * Find the number of islands.
  */
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Example
  * Given graph:
@@ -24,6 +21,9 @@ import java.util.Queue;
  * ]
  * return 3.
  */
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class NumberOfIslands_433 {
 
@@ -38,13 +38,12 @@ public class NumberOfIslands_433 {
     }
 
     public int numIslands(boolean[][] grid) {
-        int m = grid[0].length;
-        int n = grid.length;
-
-        if (grid == null || m == 0 || n == 0) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {  // Must check grid.length == 0 before
             return 0;
         }
 
+        int m = grid[0].length;
+        int n = grid.length;
         int numIslands = 0;
 
         for (int i = 0; i < n; i++) {
