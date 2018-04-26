@@ -52,11 +52,11 @@ public class CourseSchedule_615 {
             int course = (int) queue.poll();
             int size = edges[course].size();
             for (int i = 0; i < size; i++) {
-                int prerequisite = (int) edges[course].get(i);
-                degrees[prerequisite]--;
+                int successor = (int) edges[course].get(i);
+                degrees[successor]--;
 
-                if (degrees[prerequisite] == 0) {
-                    queue.offer(prerequisite);
+                if (degrees[successor] == 0) {
+                    queue.offer(successor);
                 }
             }
         }
