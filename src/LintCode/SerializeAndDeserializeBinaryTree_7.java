@@ -13,10 +13,6 @@ package LintCode;
  *    it won't check the result of serialize.
  */
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Example
  *
@@ -29,6 +25,10 @@ import java.util.Queue;
  * Our data serialization use bfs traversal. This is just for when you got wrong answer and want to debug the input.
  * You can use other method to do serializaiton and deserialization.
  */
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class SerializeAndDeserializeBinaryTree_7 {
 
