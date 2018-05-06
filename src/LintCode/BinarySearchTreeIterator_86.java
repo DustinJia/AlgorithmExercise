@@ -8,8 +8,6 @@ package LintCode;
  *   next() and hasNext() queries run in O(1) time in average.
  */
 
-import java.util.Stack;
-
 /**
  * Example
  * For the following binary search tree, in-order traversal by using iterator is [1, 6, 10, 11, 12]
@@ -19,6 +17,8 @@ import java.util.Stack;
  *  \       \
  *   6       12
  */
+
+import java.util.Stack;
 
 public class BinarySearchTreeIterator_86 {
 
