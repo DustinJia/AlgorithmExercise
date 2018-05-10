@@ -93,4 +93,30 @@ public class Subsets_17 {
         dfs(nums, index + 1, subset, result);
     }
     //endregion
+
+    //region Backtracking Solution
+    public List<List<Integer>> subsets_BT(int[] nums) {
+        List<List<Integer>> result = new LinkedList<>();
+
+        // nums.length == 0 has a valid subset
+        if (nums == null) {
+            return result;
+        }
+
+        Arrays.sort(nums);
+
+        dfs_bt(nums, 0, new LinkedList<Integer>(), result);
+        return result;
+    }
+
+    private void dfs_bt(int[] nums, int startIndex, LinkedList<Integer> subset, List<List<Integer>> result) {
+        result.add(new LinkedList<>(subset));  // Deep copy
+
+        for (int i = startIndex; i < nums.length; i++) {
+            subset.add(nums[i]);
+            dfs(nums, i + 1, subset, result);
+            subset.remove(subset.size() - 1);  // Backtracking
+        }
+    }
+    //endregion
 }
