@@ -1,11 +1,12 @@
 package LintCode;
 
-// https://www.lintcode.com/problem/combination-sum/description
+// https://www.lintcode.com/problem/combination-sum-ii/description
 
 /**
- * Given a set of candidate numbers (C) and a target number (T),
+ * Given a collection of candidate numbers (C) and a target number (T),
  * find all unique combinations in C where the candidate numbers sums to T.
- * The same repeated number may be chosen from C unlimited number of times.
+ * Each number in C may only be used once in the combination.
+
  *
  * Notice
  *   All numbers (including target) will be positive integers.
@@ -15,32 +16,37 @@ package LintCode;
 
 /**
  * Example
- * Given candidate set [2,3,6,7] and target 7, a solution set is:
- * [7]
- * [2, 2, 3]
+ * Given candidate set [10,1,6,7,2,1,5] and target 8,
+ * A solution set is:
+ * [
+ *  [1,7],
+ *  [1,2,5],
+ *  [2,6],
+ *  [1,1,6]
+ *  ]
  */
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CombinationSum_135 {
+public class CombinationSum2_153 {
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public List<List<Integer>> combinationSum2(int[] num, int target) {
         List<List<Integer>> result = new LinkedList<>();
 
-        if (candidates == null) {
+        if (num == null) {
             return result;
         }
 
-        Arrays.sort(candidates);
+        Arrays.sort(num);
 
-        dsp(candidates, 0, target, new LinkedList<Integer>(), result);
+        dsp(num, 0, target, new LinkedList<Integer>(), result);
 
         return result;
     }
 
-    private void dsp(int[] candidates,
+    private void dsp(int[] num,
                      int startIndex,
                      int target,
                      LinkedList<Integer> subset,
@@ -50,15 +56,15 @@ public class CombinationSum_135 {
             return;
         }
 
-        for (int i = startIndex; i < candidates.length; i++) {
-            if (candidates[i] <= target) {
+        for (int i = startIndex; i < num.length; i++) {
+            if (num[i] <= target) {
                 // Remove duplicates
-                if (i > 0 && candidates[i] == candidates[i - 1]) {
+                if (i > 0 && num[i] == num[i - 1] && i > startIndex) {
                     continue;
                 }
 
-                subset.add(candidates[i]);
-                dsp(candidates, i, target - candidates[i], subset, result);
+                subset.add(num[i]);
+                dsp(num, i + 1, target - num[i], subset, result);
                 subset.remove(subset.size() - 1);
             }
         }
