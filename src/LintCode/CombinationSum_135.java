@@ -47,7 +47,7 @@ public class CombinationSum_135 {
                      List<List<Integer>> result) {
         if (target == 0) {
             result.add(new LinkedList<>(subset));
-            return;
+
         }
 
         for (int i = startIndex; i < candidates.length; i++) {
