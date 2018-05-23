@@ -9,7 +9,7 @@ package LintCode;
 
 /**
  * Example
- * Gieve s = lintcode, dict = ["de", "ding", "co", "code", "lint"].
+ * Given s = lintcode, dict = ["de", "ding", "co", "code", "lint"].
  * A solution is ["lint code", "lint co de"].
  */
 
