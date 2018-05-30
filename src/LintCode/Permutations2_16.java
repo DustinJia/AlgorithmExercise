@@ -60,4 +60,3 @@ public class Permutations2_16 {
         }
     }
 }
-
