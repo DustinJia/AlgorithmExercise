@@ -55,8 +55,8 @@ public class Permutations2_16 {
             permutation.add(nums[i]);
             visited[i] = true;
             dfs(nums, visited, permutation, result);
-            permutation.remove(permutation.size() - 1);
             visited[i] = false;
+            permutation.remove(permutation.size() - 1);
         }
     }
 }
