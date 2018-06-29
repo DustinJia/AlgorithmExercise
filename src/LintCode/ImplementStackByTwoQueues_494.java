@@ -6,9 +6,6 @@ package LintCode;
  * Implement a stack. You can use any data structure inside a stack except stack itself to implement it.
  */
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 /**
  * Example
  * push(1)
@@ -20,6 +17,9 @@ import java.util.Queue;
  * push(3)
  * isEmpty() // return false
  */
+
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class ImplementStackByTwoQueues_494 {
 
