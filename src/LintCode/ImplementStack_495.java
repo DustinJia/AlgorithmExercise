@@ -6,9 +6,6 @@ package LintCode;
  * Implement a stack. You can use any data structure inside a stack except stack itself to implement it.
  */
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 /**
  * Example
  * push(1)
@@ -20,6 +17,8 @@ import java.util.LinkedList;
  * push(3)
  * isEmpty() // return false
  */
+
+import java.util.ArrayList;
 
 public class ImplementStack_495 {
 
