@@ -17,6 +17,7 @@ package LintCode;
  */
 
 /**
+ * Example
  * CircularQueue(5)
  * isFull()   => false
  * isEmpty() => true
