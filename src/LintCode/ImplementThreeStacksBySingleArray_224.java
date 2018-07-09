@@ -23,17 +23,17 @@ package LintCode;
  * isEmpty(0) // return false
  */
 
-class StackNode {
-    public int prev, next;
-    public int value;
-    public StackNode(int p, int v, int n) {
-        value = v;
-        prev = p;
-        next = n;
-    }
-}
-
 public class ImplementThreeStacksBySingleArray_224 {
+
+    class StackNode {
+        public int prev, next;
+        public int value;
+        public StackNode(int p, int v, int n) {
+            value = v;
+            prev = p;
+            next = n;
+        }
+    }
 
     public int stackSize;
     public int indexUsed;
