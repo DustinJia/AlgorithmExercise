@@ -9,13 +9,13 @@ package LintCode;
  *   There is at least one subarray that it's sum equals to zero.
  */
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 /**
  * Example
  * Given [-3, 1, 1, -3, 5], return [0, 2], [1, 3], [1, 1], [2, 2] or [0, 4].
  */
+
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class SunarraySumClosest_139 {
 

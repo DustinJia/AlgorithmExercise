@@ -15,7 +15,6 @@ package LintCode;
  * In array [1,2,3,4,5], the 1st largest element is 5, 2nd largest element is 4, 3rd largest element is 3 and etc.
  */
 
-
 public class KthLargestElement_5 {
 
     public int kthLargestElement(int k, int[] nums) {
