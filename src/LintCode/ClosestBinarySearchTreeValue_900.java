@@ -29,7 +29,7 @@ public class ClosestBinarySearchTreeValue_900 {
 
     public int closestValue(TreeNode root, double target) {
         TreeNode lowerNode = lowerBound(root, target);
-        TreeNode upperNode = uppderBound(root, target);
+        TreeNode upperNode = upperBound(root, target);
 
         if (lowerNode == null) {
             return upperNode.val;
@@ -61,15 +61,15 @@ public class ClosestBinarySearchTreeValue_900 {
         return root;
     }
 
-    private TreeNode uppderBound(TreeNode root, double target) {
+    private TreeNode upperBound(TreeNode root, double target) {
         if (root == null) {
             return root;
         }
 
         if (target >= root.val) {
-            return uppderBound(root.right, target);
+            return upperBound(root.right, target);
         } else {
-            TreeNode uppderNode = uppderBound(root.left, target);
+            TreeNode uppderNode = upperBound(root.left, target);
             if (uppderNode != null) {
                 return uppderNode;
             }

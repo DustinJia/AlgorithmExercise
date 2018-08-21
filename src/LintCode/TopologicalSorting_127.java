@@ -54,11 +54,7 @@ public class TopologicalSorting_127 {
             }
         }
 
-        if (queue.size() == result.size()) {  // If cycle exists the sizes won't be equal
-            return result;
-        }
-
-        return null;
+        return result;
     }
 
     class DirectedGraphNode {
