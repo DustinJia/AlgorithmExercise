@@ -69,9 +69,9 @@ public class ClosestBinarySearchTreeValue_900 {
         if (target >= root.val) {
             return upperBound(root.right, target);
         } else {
-            TreeNode uppderNode = upperBound(root.left, target);
-            if (uppderNode != null) {
-                return uppderNode;
+            TreeNode upperNode = upperBound(root.left, target);
+            if (upperNode != null) {
+                return upperNode;
             }
         }
 
