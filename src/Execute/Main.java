@@ -1,49 +1,84 @@
 package Execute;
 
-import java.util.Stack;
+import java.util.*;
+
+class RandomListNode {
+      int label;
+      RandomListNode next, random;
+      RandomListNode(int x) { this.label = x; }
+};
 
 public class Main {
 
-    class MinStack {
-
-        Stack<Integer> stack;
-        Stack<Integer> helperStack;
-
-        public MinStack() {
-            stack = new Stack<>();
-            helperStack = new Stack<>();
-        }
-
-        public void push(int x) {
-            stack.push(x);
-
-            if (helperStack.isEmpty()) {
-                helperStack.push(x);
-            } else {
-                int min = Integer.min(helperStack.peek(), x);
-                helperStack.push(min);
-            }
-        }
-
-        public void pop() {
-            if (!stack.isEmpty()) {
-                stack.pop();
-                helperStack.pop();
-            }
-        }
-
-        public int top() {
-            return stack.peek();
-        }
-
-        public int getMin() {
-            return helperStack.peek();
-        }
-    }
-
     public static void main(String[] args) {
 
+
+    }
+}
+
+
+
+class Trie {
+
+    class TrieNode {
+        TrieNode[] children;
+        boolean isEnd;
+
+        TrieNode() {
+            children = new TrieNode[26];
+            isEnd = false;
+        }
     }
 
+    TrieNode root;
 
+    public Trie() {
+        root = new TrieNode();
+    }
+
+    /** Inserts a word into the trie. */
+    public void insert(String word) {
+        TrieNode node = root;
+
+        for (char ch : word.toCharArray()) {
+            int index = ch - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new TrieNode();
+            }
+            node = node.children[index];
+        }
+
+        node.isEnd = true;
+    }
+
+    /** Returns if the word is in the trie. */
+    public boolean search(String word) {
+        TrieNode node = root;
+
+        for (char ch : word.toCharArray()) {
+            int index = ch - 'a';
+            if (node.children[index] == null) {
+                return false;
+            }
+            node = node.children[index];
+        }
+
+        return node.isEnd;
+    }
+
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    public boolean startsWith(String prefix) {
+        TrieNode node = root;
+
+        for (char ch : prefix.toCharArray()) {
+            int index = ch - 'a';
+            if (node.children[index] == null) {
+                return false;
+            }
+            node = node.children[index];
+        }
+
+        return true;
+    }
 }
+

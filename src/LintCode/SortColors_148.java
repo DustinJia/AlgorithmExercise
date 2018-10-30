@@ -17,7 +17,6 @@ package LintCode;
  * Given [1, 0, 1, 2], sort it in-place to [0, 1, 1, 2].
  */
 
-
 public class SortColors_148 {
 
     public void sortColors(int[] nums) {

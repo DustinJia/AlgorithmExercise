@@ -3,7 +3,7 @@ package LintCode;
 // https://www.lintcode.com/problem/subsets-ii/description
 
 /**
- * Given a list of numbers that may has duplicate numbers, return all possible subsets
+ * Given a list of numbers that may have duplicate numbers, return all possible subsets
  *
  * Notice
  *   Each element in a subset must be in non-descending order.

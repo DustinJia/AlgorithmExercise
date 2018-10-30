@@ -81,7 +81,7 @@ public class SequenceReconstruction_605 {
         }
 
         int sortedValueCount = 0;
-        while (queue.size() == 1) {  // The must be only one valid sorting
+        while (queue.size() == 1) {  // There must be only one valid sorting
             int value = queue.poll();
             if (org[sortedValueCount] != value) {
                 return false;

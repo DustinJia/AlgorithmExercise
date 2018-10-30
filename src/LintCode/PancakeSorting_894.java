@@ -23,7 +23,6 @@ package LintCode;
  * Use flip(arr, i) function to sort the array.
  */
 
-
 public class PancakeSorting_894 {
 
     public void pancakeSort(int[] array) {

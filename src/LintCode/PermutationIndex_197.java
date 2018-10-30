@@ -13,7 +13,7 @@ package LintCode;
  *
  * Given [1,2,4], return 1.
  */
-
+// 1 4 2 3 , 1234 1243 1324 1342
 public class PermutationIndex_197 {
 
     public long permutationIndex(int[] A) {

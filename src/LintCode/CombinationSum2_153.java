@@ -59,7 +59,7 @@ public class CombinationSum2_153 {
         for (int i = startIndex; i < num.length; i++) {
             if (num[i] <= target) {
                 // Remove duplicates
-                if (i > 0 && num[i] == num[i - 1] && i > startIndex) {
+                if (i > startIndex && num[i] == num[i - 1]) {
                     continue;
                 }
 
